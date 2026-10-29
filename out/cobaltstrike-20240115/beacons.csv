@@ -1,0 +1,2 @@
+orig_h,resp_h,count,mean_delta,median_delta,std_delta,cv,best_fit_sleep,best_fit_jitter_pct,residual_err,beacon_score,verdict
+10.0.2.15,192.168.5.112,45,60.12,60.0,12.04,0.2003,60,20,0.021,0.92,SUSPECTED_C2
