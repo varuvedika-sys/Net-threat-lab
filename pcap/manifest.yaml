@@ -1,0 +1,32 @@
+samples:
+  - id: cobaltstrike-20240115
+    family: Cobalt Strike
+    source: malware-traffic-analysis.net
+    source_url: https://www.malware-traffic-analysis.net/2024/01/15/index.html
+    exercise_date: 2024-01-15
+    ground_truth_available: true
+    expected_techniques: [T1071.001, T1573.002, T1008]
+
+  - id: cobaltstrike-20240320
+    family: Cobalt Strike
+    source: malware-traffic-analysis.net
+    source_url: https://www.malware-traffic-analysis.net/2024/03/20/index.html
+    exercise_date: 2024-03-20
+    ground_truth_available: true
+    expected_techniques: [T1071.004, T1573.002, T1008]
+
+  - id: qakbot-20231102
+    family: Qakbot
+    source: malware-traffic-analysis.net
+    source_url: https://www.malware-traffic-analysis.net/2023/11/02/index.html
+    exercise_date: 2023-11-02
+    ground_truth_available: true
+    expected_techniques: [T1071.001, T1573.001, T1008]
+
+  - id: icedid-20231205
+    family: IcedID
+    source: malware-traffic-analysis.net
+    source_url: https://www.malware-traffic-analysis.net/2023/12/05/index.html
+    exercise_date: 2023-12-05
+    ground_truth_available: true
+    expected_techniques: [T1071.001, T1573.002, T1008]

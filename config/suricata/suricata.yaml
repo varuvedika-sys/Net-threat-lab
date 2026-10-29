@@ -1,0 +1,57 @@
+%YAML 1.1
+---
+vars:
+  address-groups:
+    HOME_NET: "[10.0.0.0/8,172.16.0.0/12,192.168.0.0/16]"
+    EXTERNAL_NET: "!$HOME_NET"
+  port-groups:
+    HTTP_PORTS: "80,8080,8000,8443"
+    SHELLCODE_PORTS: "!80"
+
+stats:
+  enabled: no
+
+outputs:
+  - fast:
+      enabled: yes
+      filename: fast.log
+      append: yes
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: eve.json
+      community-id: true
+      payload: no
+      payload-buffer-size: 4kb
+      types:
+        - alert:
+            tagged-packets: yes
+            metadata: yes
+        - dns:
+            version: 2
+        - http:
+            extended: yes
+        - tls:
+            extended: yes
+        - flow
+        - fileinfo
+        - anomaly
+
+app-layer:
+  protocols:
+    tls:
+      enabled: yes
+      ja3-fingerprints: yes
+      ja4-fingerprints: yes
+    http:
+      enabled: yes
+    dns:
+      global-attributes: yes
+      tcp:
+        enabled: yes
+      udp:
+        enabled: yes
+
+default-rule-path: /lab/config/suricata/rules
+rule-files:
+  - local.rules

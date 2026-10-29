@@ -1,0 +1,38 @@
+version: '3.8'
+
+networks:
+  analysis_net:
+    driver: bridge
+    internal: true
+
+services:
+  zeek:
+    image: zeek/zeek:6.2.0
+    container_name: net_threat_zeek
+    network_mode: none
+    volumes:
+      - ./:/lab
+    workdir: /lab
+    entrypoint: ["/bin/bash", "-c", "sleep infinity"]
+
+  suricata:
+    image: jasonish/suricata:7.0.3
+    container_name: net_threat_suricata
+    network_mode: none
+    volumes:
+      - ./:/lab
+    workdir: /lab
+    entrypoint: ["/bin/bash", "-c", "sleep infinity"]
+
+  arkime:
+    profiles: ["ui"]
+    image: arkime/arkime:5.1.0
+    container_name: net_threat_ui
+    ports:
+      - "127.0.0.1:8005:8005"
+    environment:
+      - ARKIME_PASSWORD=admin
+    volumes:
+      - ./pcap/samples:/pcap:ro
+    networks:
+      - analysis_net
