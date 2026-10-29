@@ -1,0 +1,4 @@
+value,type,source,first_seen,confidence,attack_id
+update.edge-cloud-cdn.com,domain,zeek.dns,1705300000,high,T1071.004
+192.168.5.112,ip,zeek.conn,1705300005,high,T1095
+72a589da586844d7f0818ce684948eea,ja3,zeek.ssl,1705300005,high,T1573.002

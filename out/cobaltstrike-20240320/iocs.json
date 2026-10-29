@@ -1,0 +1,26 @@
+[
+  {
+    "value": "update.edge-cloud-cdn.com",
+    "type": "domain",
+    "source": "zeek.dns",
+    "first_seen": 1705300000,
+    "confidence": "high",
+    "attack_id": "T1071.004"
+  },
+  {
+    "value": "192.168.5.112",
+    "type": "ip",
+    "source": "zeek.conn",
+    "first_seen": 1705300005,
+    "confidence": "high",
+    "attack_id": "T1095"
+  },
+  {
+    "value": "72a589da586844d7f0818ce684948eea",
+    "type": "ja3",
+    "source": "zeek.ssl",
+    "first_seen": 1705300005,
+    "confidence": "high",
+    "attack_id": "T1573.002"
+  }
+]
